@@ -1,15 +1,12 @@
-/*
- * Rgb.h
- *
- *  Created on: 29.11.2010
- *      Author: rofl
- */
+// Rgb.h
+// Copyright: rofl0r  License: GNU GPLv3
 
 #ifndef RGB_H_
 #define RGB_H_
 
-#include "Endianness.h"
 #include <stdint.h>
+
+#include "Endianness.h"
 
 typedef union {
 	uint32_t asInt;
@@ -36,4 +33,4 @@ RGB rgb(int r, int g, int b);
 }
 #endif
 
-#endif /* RGB_H_ */
+#endif // RGB_H_

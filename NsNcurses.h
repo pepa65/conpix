@@ -1,9 +1,5 @@
-/*
- * NsNcurses.h
- *
- *  Created on: 05.12.2010
- *      Author: rofl
- */
+// NsNcurses.h
+// Copyright: rofl0r  License: GNU GPLv3
 
 #ifndef NSNCURSES_H_
 #define NSNCURSES_H_
@@ -15,4 +11,4 @@ namespace ncurses {
 }
 using ncurses::chtype;
 
-#endif /* NSNCURSES_H_ */
+#endif // NSNCURSES_H_

@@ -1,9 +1,5 @@
-/*
- * ConsoleWindow.h
- *
- *  Created on: 29.11.2010
- *      Author: rofl
- */
+// ConsoleWindow.h
+// Copyright: rofl0r  License: GNU GPLv3
 
 #ifndef CONSOLEWINDOW_H_
 #define CONSOLEWINDOW_H_
@@ -59,4 +55,4 @@ public:
 	int toThousand(int in);
 };
 
-#endif /* CONSOLEWINDOW_H_ */
+#endif // CONSOLEWINDOW_H_

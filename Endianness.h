@@ -1,9 +1,5 @@
-/*
- * Endianness.h
- *
- *  Created on: 29.11.2010
- *      Author: rofl
- */
+// Endianness.h
+// Copyright: rofl0r  License: GNU GPLv3
 
 #ifndef ENDIANNESS_H_
 #define ENDIANNESS_H_
@@ -21,4 +17,4 @@
 #define IS_LITTLE_ENDIAN
 #endif
 
-#endif /* ENDIANNESS_H_ */
+#endif // ENDIANNESS_H_

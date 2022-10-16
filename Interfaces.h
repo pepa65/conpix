@@ -1,9 +1,6 @@
-/*
- * Interfaces.h
- *
- *  Created on: 04.12.2010
- *  from http://www.codeguru.com/cpp/cpp/cpp_mfc/oop/article.php/c9989
- */
+// Interfaces.h
+// Copyright: rofl0r  License: GNU GPLv3
+// After: http://www.codeguru.com/cpp/cpp/cpp_mfc/oop/article.php/c9989
 
 #ifndef INTERFACES_H_
 #define INTERFACES_H_
@@ -24,4 +21,4 @@
 
 #define implements public
 
-#endif /* INTERFACES_H_ */
+#endif // INTERFACES_H_

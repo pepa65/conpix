@@ -1,9 +1,6 @@
-/*
- * ConsoleWindow.cpp
- *
- *  Created on: 29.11.2010
- *      Author: rofl
- */
+// ConsoleWindow.cpp
+// Copyright: rofl0r  License: GNU GPLv3
+
 #include <assert.h>
 
 #include "ConsoleWindow.h"
@@ -26,7 +23,6 @@ ConsoleWindow::ConsoleWindow(ILogger* _logger) {
 	maxcol = 0;
 	log(format("hascolors: %d" , hasColors));
 	log(format("canchangecolors: %d" , canChangeColors));
-
 }
 
 ConsoleWindow::~ConsoleWindow() {
@@ -74,16 +70,14 @@ bool ConsoleWindow::setColor(RGB mycolor, bool fg) {
 	log(format("setcolor %d, %d, %d", mycolor.r, mycolor.g, mycolor.b));
 	// see if it's the actual color...
 	if (fg) {
-		if (actfgcol >= 0) {
-			if (colors[actfgcol] == (int32_t) mycolor.asInt) return true;
-		}
+		if (actfgcol >= 0 && colors[actfgcol] == (int32_t) mycolor.asInt)
+			return true;
 	} else {
-		if (actbgcol >= 0) {
-			if (colors[actbgcol] == (int32_t) mycolor.asInt) return true;
-		}
+		if (actbgcol >= 0 && colors[actbgcol] == (int32_t) mycolor.asInt)
+			return true;
 	}
 
-	// this (c|sh)ould be optimized by using a not-yet-existing-in-c++-hashmap
+	// This (c|sh)ould be optimized by using a not-yet-existing-in-c++-hashmap
 	for (int i = 0; i < colorpaircount; i++) {
 		if (colors[i] == -1) {
 				colors[i] = mycolor.asInt;
@@ -94,7 +88,7 @@ bool ConsoleWindow::setColor(RGB mycolor, bool fg) {
 				return true;
 		}
 	}
-	assert (false); // "could not set color");
+	assert (false); // Could not set color
 	return false;
 }
 
@@ -118,23 +112,22 @@ void ConsoleWindow::initoutput() {
 				return;
 		}
 	}
-	assert(false); // "colorpair not found");
+	assert(false); // Colorpair not found
 }
 
 int ConsoleWindow::fromThousand(int in) {
 	return in == 0 ? 0 : in == 1000 ? 255 : (in * 1000 * 1000) / 3921568;
 }
 
-
 int ConsoleWindow::toThousand(int in) {
-	// i dont like floats...
+	// Don't like floats...
 	return in == 0 ? 0 : in == 255 ? 1000 : (in * 3921568) / (1000 * 1000);
 }
 
 bool ConsoleWindow::setCursesColor(int colornumber, RGB color) {
 	log(format("setCursesColor %d: %d %d %d",colornumber, color.r, color.g, color.b));
 	assert(colornumber < colorpaircount);
-	// we use rgb values in the range 0-0xFF, while ncurses max is 1000
+	// Use rgb values in the range 0-0xFF, while ncurses max is 1000
 	if(!canChangeColors) return false;
 
 	int nr = toThousand(color.r);
@@ -145,7 +138,7 @@ bool ConsoleWindow::setCursesColor(int colornumber, RGB color) {
 
 bool ConsoleWindow::setColorPair(int pair, int fgcol, int bgcol) {
 	log(format("setColorPair %d, fg: %d bg: %d", pair, fgcol, bgcol));
-	assert(fgcol < colorpaircount && bgcol < colorpaircount); // "color pair is out of index");
+	assert(fgcol < colorpaircount && bgcol < colorpaircount); // Colorpair out of index
 	if (!hasColors) return false;
 	fgcolors[pair] = &colors[fgcol];
 	bgcolors[pair] = &colors[bgcol];
@@ -164,8 +157,8 @@ bool ConsoleWindow::useColorPair(int pair) {
 
 void ConsoleWindow::getSize(int& x, int& y){
 	if(ncurses::stdscr) {
-		x = ncurses::getmaxx(ncurses::stdscr);
-		y = ncurses::getmaxy(ncurses::stdscr);
+		x = (ncurses::getmaxx)(ncurses::stdscr);
+		y = (ncurses::getmaxy)(ncurses::stdscr);
 	} else { y = -1; x = -1; }
 }
 
@@ -177,7 +170,6 @@ void ConsoleWindow::addchar(int c, unsigned int attributes) {
 	initoutput();
 	ncurses::waddch(ncurses::stdscr, c | attributes);
 }
-
 
 void ConsoleWindow::printfxy (int x, int y, char* text) {
 	initoutput();

@@ -1,9 +1,5 @@
-/*
- * Format.cpp
- *
- *  Created on: 05.12.2010
- *      Author: rofl
- */
+// Format.cpp
+// Copyright: rofl0r  License: GNU GPLv3
 
 #include <stdarg.h>
 #include "Format.h"

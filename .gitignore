@@ -1,8 +1,8 @@
 *.o
+*.d
+log.txt
+conpix
+a.out
 testt/conpix
 testt/a.out
-a.out
 testt/log.txt
-log.txt
-*.d
-
