@@ -24,11 +24,11 @@ void SimpleConsoleLogger::logln(string s){
 
 SimpleFileLogger::SimpleFileLogger(string out_file) {
 	outfile = out_file;
-	myfile.open (outfile.c_str(), ios::out | ios::app | ios::binary);
+	//myfile.open (outfile.c_str(), ios::out | ios::app | ios::binary);
 }
 
 SimpleFileLogger::~SimpleFileLogger() {
-	myfile.close();
+	//myfile.close();
 }
 
 void SimpleFileLogger::logln(string s) {
@@ -37,10 +37,10 @@ void SimpleFileLogger::logln(string s) {
 }
 
 void SimpleFileLogger::log(string s) {
-	myfile << s;
+	//myfile << s;
 }
 
 void SimpleFileLogger::clear() {
-	myfile.close();
-	myfile.open (outfile.c_str(), ios::out | ios::trunc | ios::binary);
+	//myfile.close();
+	//myfile.open (outfile.c_str(), ios::out | ios::trunc | ios::binary);
 }

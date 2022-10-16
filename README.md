@@ -25,12 +25,17 @@ make
 export TERM=xterm-256color
 ```
 
+### Install
+`sudo make install`
+
+### Uninstall
+`sudo make uninstall`
+
 ## Remarks
-* Made with Eclipse CDT (managed build)
 * The flickering at the end is caused by the restoration of the
   original colors, so the xterm is still usable afterwards.
-* This repo was discontinued and subsumed by https://github.com/rofl0r/concol
-  in order to do a better job in C. The c0npix utility is included there in
-  the `example` directory.
+* Repo https://github.com/rofl0r/conpix was discontinued and subsumed by
+  https://github.com/rofl0r/concol in order to do a better job in C.
+  The c0npix utility is included there in the `example` directory.
 * The original `conpix` repo was cloned by pepa65 and will be maintained as
   a quick fix for the need to view images in the terminal, without GUI.

@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
 		float factor = (xfactor < yfactor) ? xfactor: yfactor;
 		if (cx *2 < w || cy < h)
 			ping = pixScale(pngfile, factor * 2.0, factor);
-		else // scale to double width so the proportion of the font is correct
+		else // Scale to double width so the proportion of the font is correct
 			ping = pixScale(pngfile, 2.0, 1.0 );
 	}
 	pixDestroy(&pngfile);

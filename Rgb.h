@@ -6,7 +6,7 @@
 
 #include <stdint.h>
 
-#include "Endianness.h"
+//#include "Endianness.h"
 
 typedef union {
 	uint32_t asInt;

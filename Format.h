@@ -1,9 +1,5 @@
-/*
- * Format.h
- *
- *  Created on: 04.12.2010
- *      Author: rofl
- */
+// Format.h
+// Copyright: rofl0r  License: GNU GPLv3
 
 #ifndef FORMAT_H_
 #define FORMAT_H_
@@ -13,4 +9,4 @@
 
 std::string format(std::string fmt, ...);
 
-#endif /* FORMAT_H_ */
+#endif // FORMAT_H_
